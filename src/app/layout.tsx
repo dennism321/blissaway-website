@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Cormorant_Garamond, Great_Vibes, Jost } from "next/font/google";
 import "./globals.css";
@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   icons: {
     icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/favicon.svg`,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#c4a15a",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
