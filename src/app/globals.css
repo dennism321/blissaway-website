@@ -559,7 +559,9 @@ h3 { margin: 0; font-family: var(--serif); font-weight: 500; }
 }
 
 /* ---------- Menu ---------- */
-.menu-section { padding: 120px 7vw 110px; background: var(--bg-1); scroll-margin-top: 20px; }
+.menu-section { padding: 120px 7vw 110px; background: #ffffff; scroll-margin-top: 20px; }
+.menu-section .menu-card,
+.menu-section .price-list { border: 1px solid rgba(122,76,124,.14); }
 .filter-pills {
   display: flex;
   flex-wrap: wrap;
@@ -1127,7 +1129,8 @@ h3 { margin: 0; font-family: var(--serif); font-weight: 500; }
   .modal-intro { font-size: 15.5px; }
 
   /* Gentler, more even backgrounds between sections */
-  .about-section, .menu-section { background: var(--bg-1); }
+  .about-section { background: var(--bg-1); }
+  .menu-section { background: #ffffff; }
   .highlights-section, .why-section { background: var(--bg-2); }
   .menu-card, .price-list { box-shadow: 0 1px 0 rgba(138,90,140,.06), 0 14px 30px -20px rgba(74,30,58,.22); }
   .hero-video-wrap video { filter: saturate(.65) contrast(1) brightness(.95); }
