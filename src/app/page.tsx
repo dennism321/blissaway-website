@@ -200,6 +200,8 @@ const hours = [
   { day: "Saturday", time: "9 AM – 4 PM" },
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const PHONE = "(203) 213-1842";
 const PHONE_HREF = "tel:+12032131842";
 const ADDRESS = "4130 Whitney Ave, 2nd Floor, Hamden, CT 06518";
@@ -421,8 +423,8 @@ export default function HomePage() {
       <section className="about-section" id="about">
         <div className="about-media reveal">
           <img
-            src="https://images.pexels.com/photos/34220297/pexels-photo-34220297.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1300&w=1000"
-            alt="A blush-toned treatment room with a facial bed, magnifying lamp, and esthetician’s cart"
+            src={`${basePath}/images/treatment-room.webp`}
+            alt="A blush-toned treatment room with a plum facial bed, magnifying lamp, and esthetician’s cart"
           />
           <div className="about-badge">
             <LogoMark className="about-badge-mark" />
