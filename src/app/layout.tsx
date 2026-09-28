@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Cormorant_Garamond, Great_Vibes, Jost } from "next/font/google";
+import { CANONICAL_URL } from "@/lib/site";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -22,10 +23,25 @@ const sans = Jost({
   variable: "--font-sans",
 });
 
+const title = "Bliss Away | Facials & Waxing in Hamden, CT";
+const description =
+  "Bliss Away is a luxurious facial and waxing studio in Hamden, Connecticut. Look good. Feel amazing.";
+
 export const metadata: Metadata = {
-  title: "Bliss Away | Facials & Waxing in Hamden, CT",
-  description:
-    "Bliss Away is a luxurious facial and waxing studio in Hamden, Connecticut. Look good. Feel amazing.",
+  metadataBase: new URL(CANONICAL_URL),
+  title,
+  description,
+  alternates: {
+    canonical: CANONICAL_URL,
+  },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Bliss Away",
+    title,
+    description,
+    locale: "en_US",
+  },
   icons: {
     icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/favicon.svg`,
   },
