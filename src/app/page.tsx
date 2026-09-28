@@ -681,7 +681,23 @@ export default function HomePage() {
 
       <section className="cta-section">
         <div className="cta-inner reveal">
-          <LogoMark className="cta-mark" />
+          <figure className="cta-portrait">
+            <div className="cta-portrait-frame">
+              <img
+                className="cta-portrait-photo"
+                src={`${basePath}/images/heidi-bates.webp`}
+                alt="Heidi Bates, Licensed Esthetician and owner of Bliss Away"
+                width={640}
+                height={800}
+                loading="lazy"
+              />
+              <LogoMark className="cta-portrait-mark" />
+            </div>
+            <figcaption>
+              Heidi Bates
+              <span>Licensed Esthetician · Owner</span>
+            </figcaption>
+          </figure>
           <h2>
             Your <em>bliss</em> awaits
           </h2>
