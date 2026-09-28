@@ -42,7 +42,7 @@ const menu: MenuGroup[] = [
     blurb: "Anti-aging hydration that brightens, refines the complexion, and smooths skin tone.",
     beloved: true,
     layout: "cards",
-    items: [{ name: "Hydro-Dermabrasion Facial", price: 250, duration: "90 min" }],
+    items: [{ name: "Hydro-Dermabrasion Facial", price: 210, duration: "60 min" }],
   },
   {
     category: "Facials",
