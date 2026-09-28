@@ -15,11 +15,11 @@
   --muted: #634a5b;
   --card: #fffcf8;
   --night: #241820;
-  /* Light-section backgrounds: warm, muted beiges so the page isn't glaring */
-  --bg-1: #ebe0d5;
-  --bg-2: #e3d6ca;
-  --bg-card: #f4ece3;
-  --bg-cta: #d9c6d3;
+  /* Light-section backgrounds: soft whites tinted with the logo's blush and lavender */
+  --bg-1: #fdfafb;
+  --bg-2: #f7f1f4;
+  --bg-card: #ffffff;
+  --bg-cta: #eee2eb;
   --serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
   --script: var(--font-script), Georgia, serif;
   --sans: var(--font-sans), Arial, Helvetica, sans-serif;
@@ -717,7 +717,7 @@ h3 { margin: 0; font-family: var(--serif); font-weight: 500; }
   margin: 0;
   padding: 24px 26px;
   border-radius: 20px;
-  background: rgba(243,233,223,.92);
+  background: rgba(255,255,255,.92);
   backdrop-filter: blur(8px);
 }
 .why-media blockquote p { margin: 0 0 10px; font-family: var(--serif); font-size: 24px; font-style: italic; line-height: 1.25; }
@@ -806,7 +806,7 @@ h3 { margin: 0; font-family: var(--serif); font-weight: 500; }
   position: relative;
   overflow: hidden;
   padding: 120px 7vw;
-  background: radial-gradient(ellipse at top, #e6d6e0 0%, var(--bg-cta) 70%);
+  background: radial-gradient(ellipse at top, #f7f0f5 0%, var(--bg-cta) 70%);
   text-align: center;
 }
 .cta-inner { max-width: 620px; margin: 0 auto; }
