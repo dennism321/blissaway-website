@@ -421,8 +421,8 @@ export default function HomePage() {
       <section className="about-section" id="about">
         <div className="about-media reveal">
           <img
-            src="https://images.pexels.com/photos/34220310/pexels-photo-34220310.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1300&w=1000"
-            alt="A serene, modern treatment room"
+            src="https://images.pexels.com/photos/34220297/pexels-photo-34220297.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1300&w=1000"
+            alt="A blush-toned treatment room with a facial bed, magnifying lamp, and esthetician’s cart"
           />
           <div className="about-badge">
             <LogoMark className="about-badge-mark" />
