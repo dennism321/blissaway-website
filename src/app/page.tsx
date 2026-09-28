@@ -390,7 +390,7 @@ export default function HomePage() {
             <em>Feel amazing.</em>
           </h1>
           <p className="hero-copy">
-            A luxurious facial and waxing studio in Hamden, made for skin that wants to be understood—not rushed through a menu.
+            A luxurious facial and waxing studio in Hamden, made for skin that wants to be understood.
           </p>
           <div className="hero-actions">
             <button className="button button-gold" onClick={openBooking}>
