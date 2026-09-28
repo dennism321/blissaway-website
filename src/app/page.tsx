@@ -572,8 +572,8 @@ export default function HomePage() {
       <section className="why-section">
         <div className="why-media reveal">
           <img
-            src="https://images.pexels.com/photos/13899843/pexels-photo-13899843.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1100&w=1000"
-            alt="A relaxed facial treatment in progress"
+            src={`${basePath}/images/facial-treatment.webp`}
+            alt="An esthetician’s gloved hands applying a treatment cream to a relaxed client’s face"
             loading="lazy"
           />
           <blockquote>
