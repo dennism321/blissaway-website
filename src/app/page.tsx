@@ -492,7 +492,7 @@ export default function HomePage() {
             Every treatment, <em>thoughtfully yours</em>
           </h2>
           <p>
-            Customized facials, advanced resurfacing, indulgent body treatments, and waxing from brows to back—each one designed around your individual needs.
+            Customized facials, advanced resurfacing, indulgent body treatments, and waxing from head to toes—each one designed around your individual needs.
           </p>
         </div>
         <div className="filter-pills" role="tablist" aria-label="Filter treatments">
