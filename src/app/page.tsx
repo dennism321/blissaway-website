@@ -751,7 +751,11 @@ export default function HomePage() {
           </div>
           <div>
             <h4>Visit</h4>
-            <p className="footer-address">4130 Whitney Ave, Hamden CT 06518 (Cheshire Line) 2nd Floor</p>
+            <p className="footer-address">
+              4130 Whitney Ave, Hamden CT 06518
+              <br />
+              (Cheshire Line) 2nd Floor
+            </p>
             <a href={PHONE_HREF}>{PHONE}</a>
             <p>Tue &amp; Thu 9–7 · Sat 9–4</p>
           </div>
