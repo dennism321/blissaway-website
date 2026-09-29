@@ -1282,6 +1282,7 @@ body { font-weight: 450; }
 .footer-bottom { color: rgba(246,238,230,.85); }
 
 /* 4. Small leftovers */
+.footer-grid .footer-address { font-size: 16.5px; font-weight: 600; }
 .scroll-cue { color: rgba(246,238,230,.94); }
 .pill.is-active span { color: var(--cream); }
 
@@ -1293,4 +1294,5 @@ body { font-weight: 450; }
   .hero-copy { font-size: 17.5px; }
   .announcement { font-size: 11px; letter-spacing: .08em; }
   .button, .nav-book, .mini-book, .text-link { font-size: 13px; letter-spacing: .1em; }
+  .footer-grid .footer-address { font-size: 17.6px; }
 }
