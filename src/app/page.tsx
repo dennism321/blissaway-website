@@ -732,7 +732,6 @@ export default function HomePage() {
             <a href="#top" className="footer-logo-link" aria-label="Bliss Away home">
               <FullLogo className="footer-logo" />
             </a>
-            <p>Facials, microdermabrasion, body treatments, and waxing by Heidi Bates, Licensed Esthetician, in Hamden, Connecticut.</p>
           </div>
           <div>
             <h4>Explore</h4>
