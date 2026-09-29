@@ -736,7 +736,7 @@ export default function HomePage() {
           <div>
             <h4>Explore</h4>
             <a href="#services">Treatments</a>
-            <a href="#about">Meet Heidi</a>
+            <a href="#about">Meet Heidi Bates</a>
             <a href="#visit">Visit</a>
             <button onClick={openBooking}>Book online</button>
           </div>
