@@ -1209,3 +1209,88 @@ h3 { margin: 0; font-family: var(--serif); font-weight: 500; }
   .menu-card, .price-list { box-shadow: 0 1px 0 rgba(138,90,140,.06), 0 14px 30px -20px rgba(74,30,58,.22); }
   .hero-video-wrap video { filter: saturate(.65) contrast(1) brightness(.95); }
 }
+
+/* ---------- Readability pass ---------- */
+body { font-weight: 450; }
+
+/* 1. Text over photos and video */
+.video-wash {
+  background:
+    linear-gradient(90deg, rgba(26,12,22,.93) 0%, rgba(26,12,22,.84) 40%, rgba(26,12,22,.42) 70%, rgba(26,12,22,.48) 100%),
+    linear-gradient(0deg, rgba(26,12,22,.62), transparent 50%);
+}
+.hero h1,
+.hero-copy,
+.hero .eyebrow,
+.hero-quiet-note p,
+.hero .light-link,
+.scroll-cue,
+.highlight-title,
+.highlight-copy { text-shadow: 0 1px 14px rgba(0,0,0,.45); }
+.hero em { color: rgba(246,238,230,.9); }
+.hero-copy { color: #fff8f2; font-size: 17px; font-weight: 450; line-height: 1.6; }
+.highlight-card::after {
+  background: linear-gradient(180deg, rgba(26,12,22,0) 18%, rgba(26,12,22,.38) 45%, rgba(44,20,36,.94) 100%);
+}
+.highlight-copy { color: #fff8f2; }
+
+/* 2. Label floor: 12px labels, 13px buttons, calmer tracking */
+.announcement,
+.nav-links,
+.eyebrow,
+.kicker,
+.scroll-cue,
+.pill,
+.chip-list li,
+.menu-category,
+.menu-price small,
+.price-duration,
+.about-badge span,
+.about-signoff span,
+.why-media cite,
+.info-label,
+.info-link,
+.highlight-link,
+.footer-grid h4,
+.footer-bottom,
+.cta-portrait figcaption span,
+.booking-modal label {
+  font-size: 12px;
+  letter-spacing: .14em;
+  font-weight: 600;
+}
+.kicker, .eyebrow { letter-spacing: .16em; }
+.menu-tag { font-size: 11px; letter-spacing: .12em; }
+.button,
+.nav-book,
+.mini-book,
+.text-link {
+  font-size: 13px;
+  letter-spacing: .12em;
+  font-weight: 600;
+}
+
+/* 3. Solid, readable text in the dark sections */
+.info-card p,
+.hours dt,
+.hours dd { color: #f3ebe3; }
+.info-card .info-note { color: rgba(246,238,230,.88); font-size: 14px; }
+.footer-about p { color: rgba(246,238,230,.9); }
+.footer-grid a,
+.footer-grid button,
+.footer-grid div > p { color: #f3ebe3; }
+.footer-bottom { color: rgba(246,238,230,.85); }
+
+/* 4. Small leftovers */
+.scroll-cue { color: rgba(246,238,230,.94); }
+.pill.is-active span { color: var(--cream); }
+
+@media (max-width: 640px) {
+  /* On phones the hero text spans the full width, so darken from the bottom up instead of left to right */
+  .video-wash {
+    background: linear-gradient(0deg, rgba(26,12,22,.94) 0%, rgba(26,12,22,.86) 52%, rgba(26,12,22,.55) 78%, rgba(26,12,22,.42) 100%);
+  }
+  .hero-copy { font-size: 17.5px; }
+  .announcement { font-size: 11px; letter-spacing: .08em; }
+  .button, .nav-book, .mini-book, .text-link { font-size: 13px; letter-spacing: .1em; }
+}

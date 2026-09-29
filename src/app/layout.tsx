@@ -17,9 +17,9 @@ const script = Great_Vibes({
   variable: "--font-script",
 });
 
+// Variable font (no fixed weights) so body copy can use in-between weights like 450.
 const sans = Jost({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
 });
 
