@@ -669,13 +669,27 @@ export default function HomePage() {
             Reserve your appointment <Arrow />
           </button>
         </div>
-        <div className="visit-map reveal">
-          <iframe
-            title="Map to 4130 Whitney Ave, Hamden, CT"
-            src="https://www.google.com/maps?q=4130+Whitney+Ave,+Hamden,+CT+06518&output=embed"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+        <div className="visit-media reveal">
+          <figure className="visit-photo">
+            <img
+              src={`${basePath}/images/studio-building.webp`}
+              alt="The white two-story building at 4130 Whitney Ave, Hamden, with parking out front"
+              width={1200}
+              height={750}
+              loading="lazy"
+            />
+            <figcaption>
+              <Icon name="pin" /> 4130 Whitney Ave · 2nd floor
+            </figcaption>
+          </figure>
+          <div className="visit-map">
+            <iframe
+              title="Map to 4130 Whitney Ave, Hamden, CT"
+              src="https://www.google.com/maps?q=4130+Whitney+Ave,+Hamden,+CT+06518&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
 
