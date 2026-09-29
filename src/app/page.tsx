@@ -53,7 +53,7 @@ const menu: MenuGroup[] = [
       { name: "Gentleman’s Escape Facial", price: 200, duration: "60 min" },
       { name: "Excellence Code Facial", price: 160, duration: "60 min" },
       { name: "Time Resist Facial", price: 155, duration: "60 min" },
-      { name: "Calmessence YON-KA Facial", price: 145, duration: "60 min" },
+      { name: "Calmessence Facial", price: 145, duration: "60 min" },
     ],
   },
   {
