@@ -160,6 +160,7 @@ const menu: MenuGroup[] = [
       { name: "Chest", price: 68, duration: "30 min" },
       { name: "Shoulders", price: 18, duration: "15 min" },
       { name: "Back", price: 83, duration: "60 min" },
+      { name: "Neck", price: 15, duration: "15 min" },
     ],
   },
 ];
