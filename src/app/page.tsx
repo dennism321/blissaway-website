@@ -46,7 +46,7 @@ const menu: MenuGroup[] = [
   },
   {
     category: "Facials",
-    title: "Facials",
+    title: "Yon-Ka Facials",
     blurb: "Cleansing, exfoliating, and hydrating to balance skin tone and complexion.",
     layout: "cards",
     items: [
