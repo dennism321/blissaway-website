@@ -424,7 +424,7 @@ export default function HomePage() {
       <section className="about-section" id="about">
         <div className="about-media reveal">
           <img
-            src={`${basePath}/images/treatment-room.webp`}
+            src={`${basePath}/images/temple-massage.webp`}
             alt="An esthetician’s hands giving a soothing temple and scalp massage to a relaxed client, with a candle glowing softly in the background"
           />
           <div className="about-badge">
