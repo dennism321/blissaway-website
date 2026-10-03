@@ -450,7 +450,7 @@ export default function HomePage() {
             <LogoMark className="signoff-mark" />
             <div>
               <strong>Heidi Bates</strong>
-              <span>Licensed Esthetician · Owner</span>
+              <span>Licensed Esthetician</span>
             </div>
           </div>
         </div>
@@ -684,7 +684,7 @@ export default function HomePage() {
               <img
                 className="cta-portrait-photo"
                 src={`${basePath}/images/heidi-bates.webp`}
-                alt="Heidi Bates, Licensed Esthetician and owner of Bliss Away"
+                alt="Heidi Bates, Licensed Esthetician at Bliss Away"
                 width={640}
                 height={800}
                 loading="lazy"
@@ -693,7 +693,7 @@ export default function HomePage() {
             </div>
             <figcaption>
               Heidi Bates
-              <span>Licensed Esthetician · Owner</span>
+              <span>Licensed Esthetician</span>
             </figcaption>
           </figure>
           <h2>
