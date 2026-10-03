@@ -892,6 +892,25 @@ h3 { margin: 0; font-family: var(--serif); font-weight: 500; }
   letter-spacing: .22em;
   text-transform: uppercase;
 }
+.cta-portrait .cta-gratuity {
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  gap: 10px;
+  margin-top: 8px;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.3;
+}
+.cta-portrait .cta-gratuity::before,
+.cta-portrait .cta-gratuity::after {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--gold);
+}
 .cta-inner h2 { font-size: clamp(48.4px, 5.5vw, 72.6px); }
 .cta-inner p { margin: 20px auto 34px; color: var(--text); font-size: 16.5px; line-height: 1.7; }
 .cta-actions { display: flex; justify-content: center; gap: 14px; }

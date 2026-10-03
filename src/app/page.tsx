@@ -694,6 +694,7 @@ export default function HomePage() {
             <figcaption>
               Heidi Bates
               <span>Licensed Esthetician</span>
+              <small className="cta-gratuity">Gratuities appreciated, Cash or Venmo</small>
             </figcaption>
           </figure>
           <h2>
