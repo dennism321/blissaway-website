@@ -439,8 +439,8 @@ h3 { margin: 0; font-family: var(--serif); font-weight: 500; }
 }
 .about-badge {
   position: absolute;
-  right: -28px;
-  bottom: 36px;
+  left: -28px;
+  top: 36px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -1033,7 +1033,7 @@ h3 { margin: 0; font-family: var(--serif); font-weight: 500; }
 
 @media (max-width: 900px) {
   .hero { min-height: 720px; height: auto; }
-  .about-badge { right: 16px; }
+  .about-badge { left: 16px; }
   .hero-medallion {
     position: relative;
     top: auto;
@@ -1136,7 +1136,7 @@ h3 { margin: 0; font-family: var(--serif); font-weight: 500; }
   .cta-section { padding-left: 16px; padding-right: 16px; }
   .about-section, .why-section, .visit-section { padding-top: 80px; padding-bottom: 80px; }
   .highlights-section, .menu-section, .cta-section { padding-top: 80px; padding-bottom: 80px; }
-  .about-badge { left: 12px; right: 12px; bottom: 12px; }
+  .about-badge { left: 12px; right: 12px; top: 12px; }
   .about-badge div { white-space: normal; }
   .about-badge span { letter-spacing: .12em; }
   .highlight-grid { grid-template-columns: 1fr; }

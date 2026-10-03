@@ -425,7 +425,7 @@ export default function HomePage() {
         <div className="about-media reveal">
           <img
             src={`${basePath}/images/treatment-room.webp`}
-            alt="A calm gray and white treatment room with a bed draped in a cozy lavender blanket, shelves of towels and skincare products, and a cart of wax warmers"
+            alt="An esthetician’s hands giving a calming scalp and temple massage to a relaxed client, with candles glowing in the background"
           />
           <div className="about-badge">
             <LogoMark className="about-badge-mark" />
