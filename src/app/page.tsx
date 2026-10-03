@@ -132,6 +132,7 @@ const menu: MenuGroup[] = [
       { name: "Nose", price: 19, duration: "15 min" },
       { name: "Hairline", price: 15, duration: "15 min" },
       { name: "Neckline", price: 15, duration: "15 min" },
+      { name: "Full Facial Wax and Soothing Massage", price: 86, duration: "30 min" },
     ],
   },
   {
