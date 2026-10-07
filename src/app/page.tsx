@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, ReactNode, useEffect, useState } from "react";
+import { FormEvent, Fragment, ReactNode, useEffect, useState } from "react";
 import { FullLogo, LeafMark, LogoMark, Wordmark } from "@/components/Logo";
 
 type Category = "Advanced" | "Facials" | "Add-ons" | "Body" | "Waxing";
@@ -204,9 +204,6 @@ const hours = [
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-// Online booking is handled by Square Appointments.
-const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/buyer/widget/9six5lma3510xo/LRZRAVH2MBG9K";
-
 const PHONE = "(203) 626-1731";
 const PHONE_HREF = "tel:+12036261731";
 const ADDRESS = "4130 Whitney Ave, 2nd Floor, Hamden, CT 06518";
@@ -225,31 +222,6 @@ function Spark() {
     <span className="spark" aria-hidden="true">
       <LeafMark />
     </span>
-  );
-}
-
-function BookLink({
-  className,
-  children,
-  label,
-  onClick,
-}: {
-  className?: string;
-  children: ReactNode;
-  label?: string;
-  onClick?: () => void;
-}) {
-  return (
-    <a
-      className={className}
-      href={SQUARE_BOOKING_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label ? `${label} (opens Square booking in a new tab)` : undefined}
-      onClick={onClick}
-    >
-      {children}
-    </a>
   );
 }
 
@@ -292,6 +264,8 @@ function Icon({ name }: { name: "leaf" | "clock" | "path" | "home" | "pin" | "ho
 }
 
 export default function HomePage() {
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState<Category | "All">("All");
 
@@ -324,6 +298,17 @@ export default function HomePage() {
   }
 
   const visibleGroups = filter === "All" ? menu : menu.filter((group) => group.category === filter);
+
+  function openBooking() {
+    setSubmitted(false);
+    setBookingOpen(true);
+    setMenuOpen(false);
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSubmitted(true);
+  }
 
   return (
     <main>
@@ -360,9 +345,9 @@ export default function HomePage() {
             <a href="#about">Meet Heidi</a>
             <a href="#visit">Visit us</a>
           </div>
-          <BookLink className="nav-book">
+          <button className="nav-book" onClick={openBooking}>
             Book a visit <Arrow />
-          </BookLink>
+          </button>
           <button
             className="menu-button"
             aria-label="Open menu"
@@ -384,9 +369,9 @@ export default function HomePage() {
             <a href="#visit" onClick={() => setMenuOpen(false)}>
               Visit us
             </a>
-            <BookLink onClick={() => setMenuOpen(false)}>
+            <button onClick={openBooking}>
               Book a visit <Arrow />
-            </BookLink>
+            </button>
           </div>
         )}
 
@@ -407,9 +392,9 @@ export default function HomePage() {
             A luxurious facial and waxing studio in Hamden (Cheshire Line), made for skin that wants to be understood.
           </p>
           <div className="hero-actions">
-            <BookLink className="button button-gold">
+            <button className="button button-gold" onClick={openBooking}>
               Begin your ritual <Arrow />
-            </BookLink>
+            </button>
             <a className="text-link light-link" href="#services">
               Explore treatments <Arrow diagonal />
             </a>
@@ -553,9 +538,9 @@ export default function HomePage() {
                           ${item.price}
                           <small>{item.duration}</small>
                         </span>
-                        <BookLink className="mini-book" label={`Book ${item.name}`}>
+                        <button className="mini-book" onClick={openBooking} aria-label={`Book ${item.name}`}>
                           Book <Arrow />
-                        </BookLink>
+                        </button>
                       </div>
                     </article>
                   ))}
@@ -577,9 +562,9 @@ export default function HomePage() {
         </div>
         <div className="menu-cta">
           <p>Not sure where to start? Heidi will help you choose the right treatment for your skin.</p>
-          <BookLink className="button button-ink">
+          <button className="button button-ink" onClick={openBooking}>
             Book your visit <Arrow />
-          </BookLink>
+          </button>
         </div>
       </section>
 
@@ -630,9 +615,9 @@ export default function HomePage() {
               <p>From the moment you arrive, a peaceful space to leave feeling your best.</p>
             </div>
           </div>
-          <BookLink className="button button-ink">
+          <button className="button button-ink" onClick={openBooking}>
             Book your escape <Arrow />
-          </BookLink>
+          </button>
         </div>
       </section>
 
@@ -678,9 +663,9 @@ export default function HomePage() {
               <p>Call or text to book or ask about any treatment.</p>
             </div>
           </div>
-          <BookLink className="button button-gold">
+          <button className="button button-gold" onClick={openBooking}>
             Reserve your appointment <Arrow />
-          </BookLink>
+          </button>
         </div>
         <div className="visit-media reveal">
           <figure className="visit-photo">
@@ -731,9 +716,9 @@ export default function HomePage() {
           </h2>
           <p>Relax, recharge, and leave feeling refreshed, confident, and beautifully renewed.</p>
           <div className="cta-actions">
-            <BookLink className="button button-ink">
+            <button className="button button-ink" onClick={openBooking}>
               Book your visit <Arrow />
-            </BookLink>
+            </button>
             <a className="button button-outline" href={PHONE_HREF}>
               Call {PHONE}
             </a>
@@ -753,7 +738,7 @@ export default function HomePage() {
             <a href="#services">Treatments</a>
             <a href="#about">Meet Heidi Bates</a>
             <a href="#visit">Visit</a>
-            <BookLink>Book online</BookLink>
+            <button onClick={openBooking}>Book online</button>
           </div>
           <div>
             <h4>Treatments</h4>
@@ -780,6 +765,86 @@ export default function HomePage() {
         </div>
       </footer>
 
+      {bookingOpen && (
+        <div className="modal-backdrop" role="presentation" onMouseDown={() => setBookingOpen(false)}>
+          <section
+            className="booking-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="booking-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <button className="modal-close" onClick={() => setBookingOpen(false)} aria-label="Close booking form">
+              ×
+            </button>
+            {submitted ? (
+              <div className="booking-success">
+                <FullLogo className="success-logo" />
+                <p className="eyebrow">We have you</p>
+                <h2>
+                  Consider it
+                  <br />
+                  <em>the beginning.</em>
+                </h2>
+                <p>We’ll be in touch shortly to find a moment that feels right for you.</p>
+                <button className="button button-ink" onClick={() => setBookingOpen(false)}>
+                  Back to Bliss Away <Arrow />
+                </button>
+              </div>
+            ) : (
+              <>
+                <FullLogo className="modal-logo" />
+                <p className="eyebrow">
+                  <Spark /> Start your visit
+                </p>
+                <h2 id="booking-title">
+                  Let’s make time
+                  <br />
+                  <em>for your skin.</em>
+                </h2>
+                <p className="modal-intro">
+                  Send a few details and we’ll follow up with your best next step. Prefer to talk? Call or text{" "}
+                  <a href={PHONE_HREF}>{PHONE}</a>.
+                </p>
+                <form onSubmit={handleSubmit}>
+                  <label>
+                    Your name
+                    <input required name="name" placeholder="First and last name" />
+                  </label>
+                  <label>
+                    Email address
+                    <input required type="email" name="email" placeholder="you@email.com" />
+                  </label>
+                  <label>
+                    Phone number
+                    <input type="tel" name="phone" placeholder="(203) 555-0123" />
+                  </label>
+                  <label>
+                    I’m curious about
+                    <select name="interest" defaultValue="">
+                      <option value="" disabled>
+                        Select a treatment
+                      </option>
+{menu.map((group) => (
+                        <optgroup key={group.title} label={group.title}>
+                          {group.items.map((item) => (
+                            <option key={item.name}>
+                              {group.layout === "list" ? `${group.title}: ${item.name}` : item.name}
+                            </option>
+                          ))}
+                        </optgroup>
+                      ))}
+                    </select>
+                  </label>
+                  <button className="button button-gold" type="submit">
+                    Request a visit <Arrow />
+                  </button>
+                </form>
+              </>
+            )}
+          </section>
+        </div>
+      )}
     </main>
   );
 }
