@@ -328,7 +328,7 @@ export default function HomePage() {
             poster="https://images.pexels.com/videos/4264883/pexels-photo-4264883.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1260&w=2200"
           >
             <source
-              src="https://videos.pexels.com/video-files/4264883/4264883-uhd_3840_2160_30fps.mp4"
+              src="https://videos.pexels.com/video-files/4264883/4264883-hd_1920_1080_30fps.mp4"
               type="video/mp4"
             />
           </video>
