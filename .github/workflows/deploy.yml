@@ -26,7 +26,8 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+          # Served at the root of the custom domain (blissaway.studio), so no base path.
+          NEXT_PUBLIC_BASE_PATH: ""
       - run: touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
