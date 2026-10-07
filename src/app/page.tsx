@@ -204,6 +204,8 @@ const hours = [
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
+const PHONE = "(203) 626-1731";
+const PHONE_HREF = "tel:+12036261731";
 const ADDRESS = "4130 Whitney Ave, 2nd Floor, Hamden, CT 06518";
 const MAPS_URL = "https://maps.google.com/?q=4130+Whitney+Ave,+Hamden,+CT+06518";
 
@@ -227,7 +229,7 @@ function Kicker({ children, light = false }: { children: ReactNode; light?: bool
   return <p className={light ? "kicker kicker-light" : "kicker"}>{children}</p>;
 }
 
-function Icon({ name }: { name: "leaf" | "clock" | "path" | "home" | "pin" | "hours" }) {
+function Icon({ name }: { name: "leaf" | "clock" | "path" | "home" | "pin" | "hours" | "phone" }) {
   const paths = {
     leaf: <path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14Zm0 0 7-7" />,
     clock: (
@@ -243,6 +245,9 @@ function Icon({ name }: { name: "leaf" | "clock" | "path" | "home" | "pin" | "ho
         <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" />
         <circle cx="12" cy="10" r="2.5" />
       </>
+    ),
+    phone: (
+      <path d="M6.5 3.5h3l1.5 4-2 1.2a11 11 0 0 0 6.3 6.3l1.2-2 4 1.5v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 4.5 5.5a2 2 0 0 1 2-2Z" />
     ),
     hours: (
       <>
@@ -648,6 +653,15 @@ export default function HomePage() {
                 ))}
               </dl>
             </div>
+            <div className="info-card">
+              <span className="info-label">
+                <Icon name="phone" /> Call or text
+              </span>
+              <a className="info-title" href={PHONE_HREF}>
+                {PHONE}
+              </a>
+              <p>Call or text to book or ask about any treatment.</p>
+            </div>
           </div>
           <button className="button button-gold" onClick={openBooking}>
             Reserve your appointment <Arrow />
@@ -705,6 +719,9 @@ export default function HomePage() {
             <button className="button button-ink" onClick={openBooking}>
               Book your visit <Arrow />
             </button>
+            <a className="button button-outline" href={PHONE_HREF}>
+              Call {PHONE}
+            </a>
           </div>
         </div>
       </section>
@@ -738,6 +755,7 @@ export default function HomePage() {
               <br />
               (Cheshire Line) 2nd Floor
             </p>
+            <a href={PHONE_HREF}>{PHONE}</a>
             <p>Tue &amp; Thu 9–7 · Sat 9–4</p>
           </div>
         </div>
@@ -785,7 +803,8 @@ export default function HomePage() {
                   <em>for your skin.</em>
                 </h2>
                 <p className="modal-intro">
-                  Send a few details and we’ll follow up with your best next step.
+                  Send a few details and we’ll follow up with your best next step. Prefer to talk? Call or text{" "}
+                  <a href={PHONE_HREF}>{PHONE}</a>.
                 </p>
                 <form onSubmit={handleSubmit}>
                   <label>
