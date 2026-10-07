@@ -46,7 +46,7 @@ const menu: MenuGroup[] = [
   },
   {
     category: "Facials",
-    title: "Yon-Ka Facials",
+    title: "Facials",
     blurb: "Cleansing, exfoliating, and hydrating to balance skin tone and complexion.",
     layout: "cards",
     items: [
@@ -58,7 +58,7 @@ const menu: MenuGroup[] = [
   },
   {
     category: "Add-ons",
-    title: "Yon-Ka Add-ons",
+    title: "Add-ons",
     blurb: "Add any of these to a facial for a more targeted result.",
     layout: "cards",
     items: [
@@ -175,7 +175,7 @@ const highlights: { category: Category; label: string; copy: string; image: stri
   },
   {
     category: "Facials",
-    label: "Yon-Ka Facials",
+    label: "Facials",
     copy: "Customized facials that cleanse, exfoliate, and hydrate for balanced skin.",
     image: "https://images.pexels.com/photos/3865548/pexels-photo-3865548.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=700",
     alt: "A woman relaxing during a facial treatment",
