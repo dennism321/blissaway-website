@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, ReactNode, useEffect, useState } from "react";
+import { FormEvent, Fragment, ReactNode, useEffect, useState } from "react";
 import { FullLogo, LeafMark, LogoMark, Wordmark } from "@/components/Logo";
 
 type Category = "Advanced" | "Facials" | "Add-ons" | "Body" | "Waxing";
@@ -204,9 +204,6 @@ const hours = [
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-// Square Appointments booking flow, shown inside the booking pop-up (same page Square's embed script loads).
-const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/buyer/widget/4rjbnqpgtcr2tk/LRZRAVH2MBG9K";
-
 const PHONE = "(203) 626-1731";
 const PHONE_HREF = "tel:+12036261731";
 const ADDRESS = "4130 Whitney Ave, 2nd Floor, Hamden, CT 06518";
@@ -268,6 +265,7 @@ function Icon({ name }: { name: "leaf" | "clock" | "path" | "home" | "pin" | "ho
 
 export default function HomePage() {
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState<Category | "All">("All");
 
@@ -294,15 +292,6 @@ export default function HomePage() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!bookingOpen) return;
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setBookingOpen(false);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [bookingOpen]);
-
   function showCategory(category: Category) {
     setFilter(category);
     document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
@@ -311,8 +300,14 @@ export default function HomePage() {
   const visibleGroups = filter === "All" ? menu : menu.filter((group) => group.category === filter);
 
   function openBooking() {
+    setSubmitted(false);
     setBookingOpen(true);
     setMenuOpen(false);
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSubmitted(true);
   }
 
   return (
@@ -779,32 +774,74 @@ export default function HomePage() {
             aria-labelledby="booking-title"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            <button className="modal-close" onClick={() => setBookingOpen(false)} aria-label="Close booking">
+            <button className="modal-close" onClick={() => setBookingOpen(false)} aria-label="Close booking form">
               ×
             </button>
-            <div className="booking-head">
-              <LogoMark className="booking-mark" />
-              <div>
+            {submitted ? (
+              <div className="booking-success">
+                <FullLogo className="success-logo" />
+                <p className="eyebrow">We have you</p>
+                <h2>
+                  Consider it
+                  <br />
+                  <em>the beginning.</em>
+                </h2>
+                <p>We’ll be in touch shortly to find a moment that feels right for you.</p>
+                <button className="button button-ink" onClick={() => setBookingOpen(false)}>
+                  Back to Bliss Away <Arrow />
+                </button>
+              </div>
+            ) : (
+              <>
+                <FullLogo className="modal-logo" />
                 <p className="eyebrow">
                   <Spark /> Start your visit
                 </p>
                 <h2 id="booking-title">
-                  Book your <em>bliss</em>
+                  Let’s make time
+                  <br />
+                  <em>for your skin.</em>
                 </h2>
-              </div>
-            </div>
-            <p className="modal-intro">
-              Choose a treatment and a time that suits you. Prefer to talk? Call or text{" "}
-              <a href={PHONE_HREF}>{PHONE}</a>.
-            </p>
-            <div className="booking-frame-wrap">
-              <iframe
-                className="booking-frame"
-                title="Book an appointment with Bliss Away"
-                src={SQUARE_BOOKING_URL}
-                allow="payment https://app.squareup.com"
-              />
-            </div>
+                <p className="modal-intro">
+                  Send a few details and we’ll follow up with your best next step. Prefer to talk? Call or text{" "}
+                  <a href={PHONE_HREF}>{PHONE}</a>.
+                </p>
+                <form onSubmit={handleSubmit}>
+                  <label>
+                    Your name
+                    <input required name="name" placeholder="First and last name" />
+                  </label>
+                  <label>
+                    Email address
+                    <input required type="email" name="email" placeholder="you@email.com" />
+                  </label>
+                  <label>
+                    Phone number
+                    <input type="tel" name="phone" placeholder="(203) 555-0123" />
+                  </label>
+                  <label>
+                    I’m curious about
+                    <select name="interest" defaultValue="">
+                      <option value="" disabled>
+                        Select a treatment
+                      </option>
+{menu.map((group) => (
+                        <optgroup key={group.title} label={group.title}>
+                          {group.items.map((item) => (
+                            <option key={item.name}>
+                              {group.layout === "list" ? `${group.title}: ${item.name}` : item.name}
+                            </option>
+                          ))}
+                        </optgroup>
+                      ))}
+                    </select>
+                  </label>
+                  <button className="button button-gold" type="submit">
+                    Request a visit <Arrow />
+                  </button>
+                </form>
+              </>
+            )}
           </section>
         </div>
       )}
