@@ -107,7 +107,7 @@ const menu: MenuGroup[] = [
   {
     category: "Body",
     title: "Body Microdermabrasion",
-    blurb: "A non-invasive treatment that refines dry, textured skin and scar tissue for a smooth, bright appearance.",
+    blurb: "FDA Non Invasive Refines the appearance of fine lines, wrinkles, and pores & scar tissue.",
     beloved: true,
     layout: "list",
     items: [
