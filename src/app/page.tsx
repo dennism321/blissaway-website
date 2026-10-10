@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, Fragment, ReactNode, useEffect, useState } from "react";
+import { Fragment, ReactNode, useEffect, useState } from "react";
 import { FullLogo, LeafMark, LogoMark, Wordmark } from "@/components/Logo";
 
 type Category = "Advanced" | "Facials" | "Add-ons" | "Body" | "Waxing";
@@ -206,6 +206,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const PHONE = "(203) 626-1731";
 const PHONE_HREF = "tel:+12036261731";
+const SMS_HREF = "sms:+12036261731";
 const ADDRESS = "4130 Whitney Ave, 2nd Floor, Hamden, CT 06518";
 const MAPS_URL = "https://maps.google.com/?q=4130+Whitney+Ave,+Hamden,+CT+06518";
 
@@ -265,7 +266,6 @@ function Icon({ name }: { name: "leaf" | "clock" | "path" | "home" | "pin" | "ho
 
 export default function HomePage() {
   const [bookingOpen, setBookingOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState<Category | "All">("All");
 
@@ -300,14 +300,8 @@ export default function HomePage() {
   const visibleGroups = filter === "All" ? menu : menu.filter((group) => group.category === filter);
 
   function openBooking() {
-    setSubmitted(false);
     setBookingOpen(true);
     setMenuOpen(false);
-  }
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitted(true);
   }
 
   return (
@@ -774,74 +768,30 @@ export default function HomePage() {
             aria-labelledby="booking-title"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            <button className="modal-close" onClick={() => setBookingOpen(false)} aria-label="Close booking form">
+            <button className="modal-close" onClick={() => setBookingOpen(false)} aria-label="Close">
               ×
             </button>
-            {submitted ? (
-              <div className="booking-success">
-                <FullLogo className="success-logo" />
-                <p className="eyebrow">We have you</p>
-                <h2>
-                  Consider it
-                  <br />
-                  <em>the beginning.</em>
-                </h2>
-                <p>We’ll be in touch shortly to find a moment that feels right for you.</p>
-                <button className="button button-ink" onClick={() => setBookingOpen(false)}>
-                  Back to Bliss Away <Arrow />
-                </button>
-              </div>
-            ) : (
-              <>
-                <FullLogo className="modal-logo" />
-                <p className="eyebrow">
-                  <Spark /> Start your visit
-                </p>
-                <h2 id="booking-title">
-                  Let’s make time
-                  <br />
-                  <em>for your skin.</em>
-                </h2>
-                <p className="modal-intro">
-                  Send a few details and we’ll follow up with your best next step. Prefer to talk? Call or text{" "}
-                  <a href={PHONE_HREF}>{PHONE}</a>.
-                </p>
-                <form onSubmit={handleSubmit}>
-                  <label>
-                    Your name
-                    <input required name="name" placeholder="First and last name" />
-                  </label>
-                  <label>
-                    Email address
-                    <input required type="email" name="email" placeholder="you@email.com" />
-                  </label>
-                  <label>
-                    Phone number
-                    <input type="tel" name="phone" placeholder="(203) 555-0123" />
-                  </label>
-                  <label>
-                    I’m curious about
-                    <select name="interest" defaultValue="">
-                      <option value="" disabled>
-                        Select a treatment
-                      </option>
-{menu.map((group) => (
-                        <optgroup key={group.title} label={group.title}>
-                          {group.items.map((item) => (
-                            <option key={item.name}>
-                              {group.layout === "list" ? `${group.title}: ${item.name}` : item.name}
-                            </option>
-                          ))}
-                        </optgroup>
-                      ))}
-                    </select>
-                  </label>
-                  <button className="button button-gold" type="submit">
-                    Request a visit <Arrow />
-                  </button>
-                </form>
-              </>
-            )}
+            <FullLogo className="modal-logo" />
+            <p className="eyebrow">
+              <Spark /> Start your visit
+            </p>
+            <h2 id="booking-title">
+              Let’s make time
+              <br />
+              <em>for your skin.</em>
+            </h2>
+            <p className="booking-callout">
+              To Book an Appointment, Call Us or Text Us at{" "}
+              <a href={PHONE_HREF}>203-626-1731</a>
+            </p>
+            <div className="booking-actions">
+              <a className="button button-ink" href={PHONE_HREF}>
+                Call 203-626-1731
+              </a>
+              <a className="button button-outline" href={SMS_HREF}>
+                Text us
+              </a>
+            </div>
           </section>
         </div>
       )}
