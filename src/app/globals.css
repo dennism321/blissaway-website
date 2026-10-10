@@ -1366,3 +1366,12 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .booking-actions { flex-direction: column; }
   .booking-actions .button { width: 100%; }
 }
+
+/* ---------- Heidi's title: wrap evenly when it needs two lines ---------- */
+.about-signoff span,
+.cta-portrait figcaption span,
+.why-media cite {
+  display: block;
+  text-wrap: balance;
+  line-height: 1.45;
+}

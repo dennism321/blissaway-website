@@ -449,7 +449,7 @@ export default function HomePage() {
             <LogoMark className="signoff-mark" />
             <div>
               <strong>Heidi Bates</strong>
-              <span>Licensed Esthetician</span>
+              <span>Licensed Esthetician and Waxing Specialist</span>
             </div>
           </div>
         </div>
@@ -571,7 +571,7 @@ export default function HomePage() {
           />
           <blockquote>
             <p>“Every treatment should be more than just a service—it should be a peaceful escape.”</p>
-            <cite>Heidi Bates, Licensed Esthetician</cite>
+            <cite>Heidi Bates, Licensed Esthetician and Waxing Specialist</cite>
           </blockquote>
         </div>
         <div className="why-copy reveal">
@@ -692,7 +692,7 @@ export default function HomePage() {
               <img
                 className="cta-portrait-photo"
                 src={`${basePath}/images/heidi-bates.webp`}
-                alt="Heidi Bates, Licensed Esthetician at Bliss Away"
+                alt="Heidi Bates, Licensed Esthetician and Waxing Specialist at Bliss Away"
                 width={640}
                 height={800}
                 loading="lazy"
@@ -701,7 +701,7 @@ export default function HomePage() {
             </div>
             <figcaption>
               Heidi Bates
-              <span>Licensed Esthetician</span>
+              <span>Licensed Esthetician and Waxing Specialist</span>
               <small className="cta-gratuity">Gratuities appreciated, Cash or Venmo</small>
             </figcaption>
           </figure>
