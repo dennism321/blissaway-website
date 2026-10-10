@@ -751,6 +751,7 @@ export default function HomePage() {
             </p>
             <a href={PHONE_HREF}>{PHONE}</a>
             <p>Tue &amp; Thu 9–7 · Sat 9–4</p>
+            <p>Friday by Request</p>
           </div>
         </div>
         <div className="footer-bottom">
