@@ -90,7 +90,7 @@ const menu: MenuGroup[] = [
     layout: "cards",
     items: [
       {
-        name: "Body Polish & Massage",
+        name: "Body Polish & Aromatherapy Treatment",
         price: 200,
         duration: "60 min",
         description:
