@@ -200,6 +200,7 @@ const hours = [
   { day: "Tuesday", time: "9 AM – 7 PM" },
   { day: "Thursday", time: "9 AM – 7 PM" },
   { day: "Saturday", time: "9 AM – 4 PM" },
+  { day: "Friday", time: "By Request" },
 ];
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
