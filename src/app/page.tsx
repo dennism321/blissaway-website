@@ -750,7 +750,7 @@ export default function HomePage() {
               (Cheshire Line) 2nd Floor
             </p>
             <a href={PHONE_HREF}>{PHONE}</a>
-            <p>Tue &amp; Thu 9–7 · Sat 9–4</p>
+            <p>Tuesday &amp; Thursday 9–7 · Saturday 9–4</p>
             <p>Friday by Request</p>
           </div>
         </div>
