@@ -75,7 +75,7 @@ const menu: MenuGroup[] = [
         description: "A gentle renewing peel that refines and smooths the skin.",
       },
       {
-        name: "Micro-Exfoliation",
+        name: "Micro Peel",
         price: 25,
         duration: "15 min",
         description: "Exfoliating and clarifying—gently unblocks pores.",
