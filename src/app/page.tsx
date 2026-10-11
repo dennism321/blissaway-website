@@ -94,7 +94,7 @@ const menu: MenuGroup[] = [
         price: 200,
         duration: "60 min",
         description:
-          "Luxurious therapeutic exfoliation hot towel compression followed by detoxifying bath oils with hydrating smoothing treatment.",
+          "Luxurious therapeutic exfoliation, hot towel compression followed by detoxifying Aromatherapy bath oils with hydrating soothing treatment.",
       },
       {
         name: "Back Glow Facial",
