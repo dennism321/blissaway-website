@@ -647,7 +647,7 @@ export default function HomePage() {
             </span>
             <p className="info-title">4130 Whitney Ave, Hamden CT 06518, 2nd Floor</p>
             <p className="info-note">
-              Our location is above Rumanoff’s Jewellers, inside W Beauty Studio on the Cheshire line.
+              Our location is above Rumanoff’s Jewellers, inside W Beauty Studio.
             </p>
             <a className="info-link" href={MAPS_URL} target="_blank" rel="noreferrer">
               Get directions <Arrow diagonal />
