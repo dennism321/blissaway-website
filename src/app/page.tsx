@@ -209,6 +209,9 @@ const PHONE = "(203) 626-1731";
 const PHONE_HREF = "tel:+12036261731";
 // Square Appointments booking flow, shown inside the booking pop-up (the same page Square's embed script loads).
 const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/buyer/widget/42awdttg4vs8ti/LRZRAVH2MBG9K";
+const CANCELLATION_POLICY =
+  "A minimum of 24 hours’ notice is required for cancellations or rescheduling. Thank you for respecting our time and allowing us to offer appointments to other clients.";
+
 const ADDRESS = "4130 Whitney Ave, 2nd Floor, Hamden, CT 06518";
 const MAPS_URL = "https://maps.google.com/?q=4130+Whitney+Ave,+Hamden,+CT+06518";
 
@@ -232,7 +235,7 @@ function Kicker({ children, light = false }: { children: ReactNode; light?: bool
   return <p className={light ? "kicker kicker-light" : "kicker"}>{children}</p>;
 }
 
-function Icon({ name }: { name: "leaf" | "clock" | "path" | "home" | "pin" | "hours" | "phone" }) {
+function Icon({ name }: { name: "leaf" | "clock" | "path" | "home" | "pin" | "hours" | "phone" | "calendar" }) {
   const paths = {
     leaf: <path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14Zm0 0 7-7" />,
     clock: (
@@ -251,6 +254,12 @@ function Icon({ name }: { name: "leaf" | "clock" | "path" | "home" | "pin" | "ho
     ),
     phone: (
       <path d="M6.5 3.5h3l1.5 4-2 1.2a11 11 0 0 0 6.3 6.3l1.2-2 4 1.5v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 4.5 5.5a2 2 0 0 1 2-2Z" />
+    ),
+    calendar: (
+      <>
+        <rect x="4" y="5" width="16" height="15" rx="2" />
+        <path d="M4 10h16M9 3v4M15 3v4M9.5 14.5l5 3M14.5 14.5l-5 3" />
+      </>
     ),
     hours: (
       <>
@@ -668,6 +677,12 @@ export default function HomePage() {
               <p>Call or text to book or ask about any treatment.</p>
             </div>
           </div>
+          <div className="info-card info-card-policy">
+            <span className="info-label">
+              <Icon name="calendar" /> Cancellation Policy
+            </span>
+            <p>{CANCELLATION_POLICY}</p>
+          </div>
           <button className="button button-gold" onClick={openBooking}>
             Reserve your appointment <Arrow />
           </button>
@@ -798,6 +813,10 @@ export default function HomePage() {
               Choose a treatment and a time that suits you. Prefer to talk? Call or text{" "}
               <a href={PHONE_HREF}>203-626-1731</a>.
             </p>
+            <aside className="booking-policy" aria-label="Cancellation policy">
+              <strong>Cancellation Policy</strong>
+              <p>{CANCELLATION_POLICY}</p>
+            </aside>
             <div className="booking-frame-wrap">
               <iframe
                 className="booking-frame"
