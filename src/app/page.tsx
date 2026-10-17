@@ -645,7 +645,7 @@ export default function HomePage() {
             <span className="info-label">
               <Icon name="pin" /> Find us
             </span>
-            <p className="info-title">4130 Whitney Ave, Hamden CT 06518 (Cheshire Line) 2nd Floor</p>
+            <p className="info-title">4130 Whitney Ave, Hamden CT 06518, 2nd Floor</p>
             <p className="info-note">
               Our location is above Rumanoff’s Jewellers, inside W Beauty Studio on the Cheshire line.
             </p>
