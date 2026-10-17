@@ -207,7 +207,8 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const PHONE = "(203) 626-1731";
 const PHONE_HREF = "tel:+12036261731";
-const SMS_HREF = "sms:+12036261731";
+// Square Appointments booking flow, shown inside the booking pop-up (the same page Square's embed script loads).
+const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/buyer/widget/42awdttg4vs8ti/LRZRAVH2MBG9K";
 const ADDRESS = "4130 Whitney Ave, 2nd Floor, Hamden, CT 06518";
 const MAPS_URL = "https://maps.google.com/?q=4130+Whitney+Ave,+Hamden,+CT+06518";
 
@@ -292,6 +293,15 @@ export default function HomePage() {
     });
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!bookingOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setBookingOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [bookingOpen]);
 
   function showCategory(category: Category) {
     setFilter(category);
@@ -770,29 +780,31 @@ export default function HomePage() {
             aria-labelledby="booking-title"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            <button className="modal-close" onClick={() => setBookingOpen(false)} aria-label="Close">
+            <button className="modal-close" onClick={() => setBookingOpen(false)} aria-label="Close booking">
               ×
             </button>
-            <FullLogo className="modal-logo" />
-            <p className="eyebrow">
-              <Spark /> Start your visit
+            <div className="booking-head">
+              <LogoMark className="booking-mark" />
+              <div>
+                <p className="eyebrow">
+                  <Spark /> Start your visit
+                </p>
+                <h2 id="booking-title">
+                  Book your <em>bliss</em>
+                </h2>
+              </div>
+            </div>
+            <p className="modal-intro">
+              Choose a treatment and a time that suits you. Prefer to talk? Call or text{" "}
+              <a href={PHONE_HREF}>203-626-1731</a>.
             </p>
-            <h2 id="booking-title">
-              Let’s make time
-              <br />
-              <em>for your skin.</em>
-            </h2>
-            <p className="booking-callout">
-              To Book an Appointment, Call Us or Text Us at{" "}
-              <a href={PHONE_HREF}>203-626-1731</a>
-            </p>
-            <div className="booking-actions">
-              <a className="button button-ink" href={PHONE_HREF}>
-                Call 203-626-1731
-              </a>
-              <a className="button button-outline" href={SMS_HREF}>
-                Text us
-              </a>
+            <div className="booking-frame-wrap">
+              <iframe
+                className="booking-frame"
+                title="Book an appointment with Bliss Away"
+                src={SQUARE_BOOKING_URL}
+                allow="payment https://app.squareup.com"
+              />
             </div>
           </section>
         </div>
