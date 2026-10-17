@@ -210,7 +210,7 @@ const PHONE_HREF = "tel:+12036261731";
 // Square Appointments booking flow, shown inside the booking pop-up (the same page Square's embed script loads).
 const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/buyer/widget/42awdttg4vs8ti/LRZRAVH2MBG9K";
 const CANCELLATION_POLICY =
-  "A minimum of 24 hours’ notice is required for cancellations or rescheduling. Thank you for respecting my time and allowing me to offer appointments to other clients.";
+  "24 Hour cancelation policy required.";
 
 const ADDRESS = "4130 Whitney Ave, 2nd Floor, Hamden, CT 06518";
 const MAPS_URL = "https://maps.google.com/?q=4130+Whitney+Ave,+Hamden,+CT+06518";
