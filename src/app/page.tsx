@@ -327,7 +327,7 @@ export default function HomePage() {
   return (
     <main>
       <div className="announcement">
-        <span>New location · 4130 Whitney Ave, 2nd floor, Hamden</span>
+        <span>Located inside WBeauty Studio · 4130 Whitney Ave, 2nd floor, Hamden</span>
         <span className="announcement-dot">•</span>
         <span>On the Cheshire line</span>
       </div>
