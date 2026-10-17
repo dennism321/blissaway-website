@@ -132,7 +132,7 @@ const menu: MenuGroup[] = [
       { name: "Nose", price: 19, duration: "15 min" },
       { name: "Hairline", price: 15, duration: "15 min" },
       { name: "Neckline", price: 15, duration: "15 min" },
-      { name: "Full Facial Wax and Soothing Massage", price: 86, duration: "30 min" },
+      { name: "Full Facial Wax", price: 86, duration: "30 min" },
     ],
   },
   {
@@ -183,7 +183,7 @@ const highlights: { category: Category; label: string; copy: string; image: stri
   {
     category: "Body",
     label: "Body Treatments",
-    copy: "Body polish, massage, and body microdermabrasion for smooth, glowing skin.",
+    copy: "Body polish and body microdermabrasion for smooth, glowing skin.",
     image: "https://images.pexels.com/photos/10976267/pexels-photo-10976267.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=700",
     alt: "A soothing body treatment with exfoliating scrub",
   },
