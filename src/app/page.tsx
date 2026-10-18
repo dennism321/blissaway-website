@@ -436,8 +436,8 @@ export default function HomePage() {
       <section className="about-section" id="about">
         <div className="about-media reveal">
           <img
-            src={`${basePath}/images/studio-treatment-room.webp`}
-            alt="The Bliss Away treatment room inside WBeauty Studio, with a white-draped bed, a soft gray throw and pillow, fresh flowers, and a supply cart"
+            src={`${basePath}/images/studio-room-centered.webp`}
+            alt="The Bliss Away treatment room inside WBeauty Studio, with a white-draped bed, a soft gray throw and pillow, and fresh flowers"
           />
         </div>
         <div className="about-copy reveal">
