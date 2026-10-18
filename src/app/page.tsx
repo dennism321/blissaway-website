@@ -439,13 +439,6 @@ export default function HomePage() {
             src={`${basePath}/images/studio-treatment-room.webp`}
             alt="The Bliss Away treatment room inside WBeauty Studio, with a white-draped bed, a soft gray throw and pillow, fresh flowers, and a supply cart"
           />
-          <div className="about-badge">
-            <LogoMark className="about-badge-mark" />
-            <div>
-              <strong>Now open</strong>
-              <span>4130 Whitney Ave · Hamden</span>
-            </div>
-          </div>
         </div>
         <div className="about-copy reveal">
           <Kicker>Meet your esthetician</Kicker>
