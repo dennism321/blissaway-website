@@ -436,8 +436,8 @@ export default function HomePage() {
       <section className="about-section" id="about">
         <div className="about-media reveal">
           <img
-            src={`${basePath}/images/spa-treatment-room.webp`}
-            alt="A softly lit treatment room with a white-draped bed and rolled towel, a cart of skincare products and candles, tropical plants, and an arched mirror"
+            src={`${basePath}/images/studio-treatment-room.webp`}
+            alt="The Bliss Away treatment room inside WBeauty Studio, with a white-draped bed, a soft gray throw and pillow, fresh flowers, and a supply cart"
           />
           <div className="about-badge">
             <LogoMark className="about-badge-mark" />
