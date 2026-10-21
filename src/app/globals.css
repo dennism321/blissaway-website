@@ -1323,25 +1323,6 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .booking-modal select { font-size: 17px; }
 }
 
-/* ---------- Booking pop-up: call or text ---------- */
-.booking-callout {
-  margin: 4px 0 26px;
-  color: var(--ink);
-  font-family: var(--serif);
-  font-size: 26px;
-  line-height: 1.3;
-}
-.booking-callout a { color: var(--burgundy); white-space: nowrap; border-bottom: 1px solid currentColor; }
-.booking-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-@media (max-width: 640px) {
-  .booking-callout { font-size: 23px; }
-  .booking-actions { flex-direction: column; }
-  .booking-actions .button { width: 100%; }
-  .booking-modal .modal-logo { width: 116px; margin: -14px auto 0; }
-  .booking-modal h2 { font-size: 38px; }
-  .booking-callout { margin-bottom: 20px; }
-}
-
 /* ---------- Cancellation policy ---------- */
 .booking-policy {
   margin: 0 0 16px;
@@ -1361,7 +1342,6 @@ a, button { -webkit-tap-highlight-color: transparent; }
 }
 .booking-policy p { margin: 0; color: var(--text); font-size: 14.5px; line-height: 1.55; }
 .info-card-policy { margin: -18px 0 34px; }
-.booking-policy-after { margin: 22px 0 0; }
 @media (max-width: 640px) {
   .booking-policy p { font-size: 15px; }
 }
