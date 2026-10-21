@@ -208,6 +208,8 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const PHONE = "(203) 626-1731";
 const PHONE_HREF = "tel:+12036261731";
 const SMS_HREF = "sms:+12036261731";
+// Square Appointments booking page (the same page Square's embed script loads), used by "Book a visit".
+const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/buyer/widget/42awdttg4vs8ti/LRZRAVH2MBG9K";
 const CANCELLATION_POLICY =
   "24 Hour cancelation policy required.";
 
@@ -276,6 +278,7 @@ function Icon({ name }: { name: "leaf" | "clock" | "path" | "home" | "pin" | "ho
 
 export default function HomePage() {
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [bookingMode, setBookingMode] = useState<"call" | "square">("call");
   const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState<Category | "All">("All");
 
@@ -319,6 +322,13 @@ export default function HomePage() {
   const visibleGroups = filter === "All" ? menu : menu.filter((group) => group.category === filter);
 
   function openBooking() {
+    setBookingMode("call");
+    setBookingOpen(true);
+    setMenuOpen(false);
+  }
+
+  function openSquareBooking() {
+    setBookingMode("square");
     setBookingOpen(true);
     setMenuOpen(false);
   }
@@ -358,7 +368,7 @@ export default function HomePage() {
             <a href="#about">Meet Heidi</a>
             <a href="#visit">Visit us</a>
           </div>
-          <button className="nav-book" onClick={openBooking}>
+          <button className="nav-book" onClick={openSquareBooking}>
             Book a visit <Arrow />
           </button>
           <button
@@ -382,7 +392,7 @@ export default function HomePage() {
             <a href="#visit" onClick={() => setMenuOpen(false)}>
               Visit us
             </a>
-            <button onClick={openBooking}>
+            <button onClick={openSquareBooking}>
               Book a visit <Arrow />
             </button>
           </div>
@@ -781,7 +791,7 @@ export default function HomePage() {
       {bookingOpen && (
         <div className="modal-backdrop" role="presentation" onMouseDown={() => setBookingOpen(false)}>
           <section
-            className="booking-modal"
+            className={bookingMode === "square" ? "booking-modal booking-modal-square" : "booking-modal"}
             role="dialog"
             aria-modal="true"
             aria-labelledby="booking-title"
@@ -790,31 +800,65 @@ export default function HomePage() {
             <button className="modal-close" onClick={() => setBookingOpen(false)} aria-label="Close">
               ×
             </button>
-            <FullLogo className="modal-logo" />
-            <p className="eyebrow">
-              <Spark /> Start your visit
-            </p>
-            <h2 id="booking-title">
-              Let’s make time
-              <br />
-              <em>for your skin.</em>
-            </h2>
-            <p className="booking-callout">
-              To Book an Appointment, Call Us or Text Us at{" "}
-              <a href={PHONE_HREF}>203-626-1731</a>
-            </p>
-            <div className="booking-actions">
-              <a className="button button-ink" href={PHONE_HREF}>
-                Call 203-626-1731
-              </a>
-              <a className="button button-outline" href={SMS_HREF}>
-                Text us
-              </a>
-            </div>
-            <aside className="booking-policy booking-policy-after" aria-label="Cancellation policy">
-              <strong>Cancellation Policy</strong>
-              <p>{CANCELLATION_POLICY}</p>
-            </aside>
+            {bookingMode === "square" ? (
+              <>
+              <div className="booking-head">
+                <LogoMark className="booking-mark" />
+                <div>
+                  <p className="eyebrow">
+                    <Spark /> Start your visit
+                  </p>
+                  <h2 id="booking-title">
+                    Book your <em>bliss</em>
+                  </h2>
+                </div>
+              </div>
+              <p className="modal-intro">
+                Choose a treatment and a time that suits you. Prefer to talk? Call or text{" "}
+                <a href={PHONE_HREF}>203-626-1731</a>.
+              </p>
+              <aside className="booking-policy" aria-label="Cancellation policy">
+                <strong>Cancellation Policy</strong>
+                <p>{CANCELLATION_POLICY}</p>
+              </aside>
+              <div className="booking-frame-wrap">
+                <iframe
+                  className="booking-frame"
+                  title="Book an appointment with Bliss Away"
+                  src={SQUARE_BOOKING_URL}
+                  allow="payment https://app.squareup.com"
+                />
+              </div>
+              </>
+            ) : (
+              <>
+              <FullLogo className="modal-logo" />
+              <p className="eyebrow">
+                <Spark /> Start your visit
+              </p>
+              <h2 id="booking-title">
+                Let’s make time
+                <br />
+                <em>for your skin.</em>
+              </h2>
+              <p className="booking-callout">
+                To Book an Appointment, Call Us or Text Us at{" "}
+                <a href={PHONE_HREF}>203-626-1731</a>
+              </p>
+              <div className="booking-actions">
+                <a className="button button-ink" href={PHONE_HREF}>
+                  Call 203-626-1731
+                </a>
+                <a className="button button-outline" href={SMS_HREF}>
+                  Text us
+                </a>
+              </div>
+              <aside className="booking-policy booking-policy-after" aria-label="Cancellation policy">
+                <strong>Cancellation Policy</strong>
+                <p>{CANCELLATION_POLICY}</p>
+              </aside>
+              </>
+            )}
           </section>
         </div>
       )}
