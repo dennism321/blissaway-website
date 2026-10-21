@@ -209,7 +209,7 @@ const PHONE = "(203) 626-1731";
 const PHONE_HREF = "tel:+12036261731";
 const SMS_HREF = "sms:+12036261731";
 // Square Appointments booking page (the same page Square's embed script loads), used by "Book a visit".
-const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/buyer/widget/42awdttg4vs8ti/LRZRAVH2MBG9K";
+const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/buyer/widget/op0bb19kwxdf15/LRZRAVH2MBG9K";
 const CANCELLATION_POLICY =
   "24 Hour cancelation policy required.";
 
