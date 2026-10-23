@@ -69,10 +69,10 @@ const menu: MenuGroup[] = [
         description: "Vitamin C, Salicylic & Glycolic Acid\nDeep Resurfacing & Clarifying\nRestoring to Luminous Complexion",
       },
       {
-        name: "Alpha Peel",
+        name: "Botanical Peel",
         price: 25,
         duration: "15 min",
-        description: "A gentle renewing peel that refines and smooths the skin.",
+        description: "Alpha Hydroxy Acids\nAdvanced Resurfacing Treatment\nBrightening & Smoothing",
       },
       {
         name: "Micro Peel",
