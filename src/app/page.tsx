@@ -63,10 +63,10 @@ const menu: MenuGroup[] = [
     layout: "cards",
     items: [
       {
-        name: "Lumière Peel",
+        name: "Luminous Renewal Peel",
         price: 25,
         duration: "15 min",
-        description: "30% AHA & BHA with 1% salicylic and glycolic acid—exfoliating and brightening to fade dark spots.",
+        description: "Vitamin C, Salicylic & Glycolic Acid\nDeep Resurfacing & Clarifying\nRestoring to Luminous Complexion",
       },
       {
         name: "Alpha Peel",

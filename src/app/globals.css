@@ -621,6 +621,8 @@ h3 { margin: 0; font-family: var(--serif); font-weight: 500; }
 .menu-leaf { flex-shrink: 0; width: 18px; height: 12px; color: var(--lavender); }
 .menu-card h4 { margin: 14px 0 12px; font-family: var(--serif); font-size: 28.6px; font-weight: 500; line-height: 1.1; }
 .menu-card p { flex: 1; margin: 0 0 26px; color: var(--text); font-size: 15.95px; line-height: 1.7; }
+/* descriptions can list points on separate lines */
+.menu-card p { white-space: pre-line; }
 .menu-card-spacer { flex: 1; min-height: 12px; }
 .menu-card-foot {
   display: flex;
