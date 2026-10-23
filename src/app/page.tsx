@@ -75,10 +75,10 @@ const menu: MenuGroup[] = [
         description: "Alpha Hydroxy Acids\nAdvanced Resurfacing Treatment\nBrightening & Smoothing",
       },
       {
-        name: "Micro Peel",
+        name: "Radiance Peel",
         price: 25,
         duration: "15 min",
-        description: "Exfoliating and clarifying—gently unblocks pores.",
+        description: "Oxygenating Exfoliate\nGlowing, Brightening\nDetoxifying Infusion",
       },
     ],
   },
