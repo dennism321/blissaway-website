@@ -1386,5 +1386,8 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .booking-modal-square { padding: 26px 16px 16px; border-radius: 22px; }
   .booking-head { gap: 14px; padding-right: 28px; }
   .booking-mark { width: 52px; height: 52px; }
+  /* Phones: also hide Square's tab row / "All services" link (they end at 108px), so an
+     iOS pull-down bounce can't slide the photo + menu strip back into view. */
+  .booking-frame-wrap { --square-crop: 110px; }
   .booking-frame { height: calc(68vh + var(--square-crop)); height: calc(68svh + var(--square-crop)); min-height: calc(420px + var(--square-crop)); }
 }
