@@ -585,9 +585,6 @@ export default function HomePage() {
         </div>
         <div className="menu-cta">
           <p>Not sure where to start? Heidi will help you choose the right treatment for your skin.</p>
-          <button className="button button-ink" onClick={openBooking}>
-            Book your visit <Arrow />
-          </button>
         </div>
       </section>
 
