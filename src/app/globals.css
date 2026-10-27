@@ -1412,3 +1412,11 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .cta-section .cta-portrait figcaption { font-size: 36px; }
   .cta-section .cta-portrait figcaption span { font-size: 14px; letter-spacing: .1em; }
 }
+
+/* Small phones: let long menu headings + their "Beloved" tag wrap instead of
+   stretching the whole menu wider than the screen. */
+@media (max-width: 640px) {
+  .menu-group-head h3 { flex-wrap: wrap; row-gap: 6px; font-size: clamp(26px, 8vw, 30.8px); }
+  .menu-groups, .menu-group, .menu-grid { min-width: 0; }
+  .menu-grid { grid-template-columns: minmax(0, 1fr); }
+}
