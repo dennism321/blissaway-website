@@ -1391,3 +1391,24 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .booking-frame-wrap { --square-crop: 70px; }
   .booking-frame { height: calc(68vh + var(--square-crop)); height: calc(68svh + var(--square-crop)); min-height: calc(420px + var(--square-crop)); }
 }
+
+/* ---------- Heidi's name + title under the portrait: large and bold ---------- */
+.cta-section .cta-portrait figcaption {
+  gap: 10px;
+  color: var(--ink);
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.05;
+}
+.cta-section .cta-portrait figcaption span {
+  color: var(--burgundy);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+@media (max-width: 640px) {
+  .cta-section .cta-portrait figcaption { font-size: 36px; }
+  .cta-section .cta-portrait figcaption span { font-size: 14px; letter-spacing: .1em; }
+}
