@@ -42,7 +42,27 @@ const menu: MenuGroup[] = [
     blurb: "Anti-aging hydration that brightens, refines the complexion, and smooths skin tone.",
     beloved: true,
     layout: "cards",
-    items: [{ name: "Hydro-Dermabrasion Facial", price: 210, duration: "60 min" }],
+    items: [
+      {
+        name: "Hydrodermabrasion Facial",
+        price: 250,
+        duration: "90 min",
+        description:
+          "Anti-aging, eliminating fine lines and wrinkles & enhancing collagen production with a luminous glow",
+      },
+      {
+        name: "Hydrodermabrasion Clarifying",
+        price: 165,
+        duration: "60 min",
+        description: "Eliminating clogged pores & redefining the texture of skin",
+      },
+      {
+        name: "Hydrodermabrasion Renewal",
+        price: 210,
+        duration: "90 min",
+        description: "Brightening & resurfacing",
+      },
+    ],
   },
   {
     category: "Facials",
